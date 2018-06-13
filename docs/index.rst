@@ -3,8 +3,9 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
+************************************************
 GMOS IFU-1 Data Reduction Tutorial - Gemini IRAF
-================================================
+************************************************
 
 .. toctree::
    :maxdepth: 2
