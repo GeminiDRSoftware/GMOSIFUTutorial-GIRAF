@@ -17,6 +17,7 @@ GMOS IFU-1 Data Reduction Tutorial - Gemini IRAF
    overview
    getdata
    makelist
+   inspect
    bias
    standardstar
    pyrafconfig
