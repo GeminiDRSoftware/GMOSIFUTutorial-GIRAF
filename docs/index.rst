@@ -16,11 +16,11 @@ GMOS IFU-1 Data Reduction Tutorial - Gemini IRAF
    gmosifu
    overview
    getdata
+   pyrafconfig
    makelist
    inspect
    bias
    standardstar
-   pyrafconfig
    mdf
    arc
    wavelencal
