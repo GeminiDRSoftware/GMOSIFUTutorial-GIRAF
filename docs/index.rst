@@ -20,7 +20,7 @@ GMOS IFU-1 Data Reduction Tutorial - Gemini IRAF
    makelist
    inspect
    bias
-   standardstar
+   sensfunc
    mdf
    arc
    wavelencal
