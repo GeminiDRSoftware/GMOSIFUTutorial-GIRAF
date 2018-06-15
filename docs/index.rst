@@ -22,8 +22,8 @@ GMOS IFU-1 Data Reduction Tutorial - Gemini IRAF
    bias
    sensfunc
    mdf
+   preprocflat
    arc
-   wavelencal
    flat
    response
    preprocscience
@@ -36,6 +36,15 @@ GMOS IFU-1 Data Reduction Tutorial - Gemini IRAF
    makecube
    iqassessment
    combinecube
+
+Appendix
+--------
+
+.. toctree::
+   :numbered:
+   :maxdepth: 1
+
+   appendix/standardstar.rst
 
 
 Indices and tables

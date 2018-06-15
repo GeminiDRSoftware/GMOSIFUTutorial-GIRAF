@@ -78,8 +78,12 @@ For an overview of the standard star reduction, see the diagram in Appendix A.
 | ``S20060331S0055.fits``.                                      |
 +--------------+------------------------+-----------------------+
 
-Because we will not be reducing the standard star, we will forgo creating a
-list for it.
+Because we will not reduce the standard star rather just focus on the steps
+specific to the sensitivity function, this is the only list we will need::
+
+    gemlist S20060331S 55 > std.lis
+
+
 
 Science Exposures
 =================
