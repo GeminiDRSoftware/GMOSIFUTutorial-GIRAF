@@ -51,6 +51,8 @@ Remove scattered light
                   xorder='3,3,3', yorder='3,3,3', cross='yes',
                   fl_inter='yes')
 
+??? screenshot of good vs bad.  for bad use second flat from that set.
+
 ??? verify that the flux in gaps goes to zero
 
 ::
