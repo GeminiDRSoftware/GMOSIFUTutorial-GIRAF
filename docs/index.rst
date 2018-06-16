@@ -29,7 +29,6 @@ GMOS IFU-1 Data Reduction Tutorial - Gemini IRAF
    preprocscience
    crrejection
    qeextractscience
-   cosmetics
    transform
    skysub
    specphotcalib
@@ -44,7 +43,8 @@ Appendix
    :numbered:
    :maxdepth: 1
 
-   appendix/standardstar.rst
+   appendix/standardstar
+   appendix/cosmetics
 
 
 Indices and tables
