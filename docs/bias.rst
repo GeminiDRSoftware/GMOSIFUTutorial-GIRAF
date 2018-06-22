@@ -6,9 +6,17 @@
 Make a processed bias
 *********************
 
+.. image:: _graphics/GMOSIFU-ProcessChart_Bias.png
+   :scale: 20%
+   :align: right
+
+.. image:: _graphics/GMOSIFU-DRChart_Bias.png
+   :scale: 20%
+   :align: right
+
 Remember to work from the ``redux`` directory.
 
-::
+Let's define a few variables::
 
     procbias = 'S20060314S0091_bias.fits'
     rawdir = '../tutorial_data/'
@@ -27,8 +35,9 @@ In this tutorial, the processed
 bias will be stored there as well as the sensitivity function.  The motivation
 for storing the processed calibration safely out of ``redux`` is that later
 on, if we decide to restart the science reduction from scratch, we can just
-delete everything knowing that the bias and the sensitivity function are safe
-and won't have to be done again.  This is preference, not a requirement.
+delete everything in ``redux`` knowing that the master bias and the sensitivity
+function are safe and won't have to be created again.  This is preference,
+not a requirement.
 
 ::
 
@@ -38,7 +47,7 @@ and won't have to be done again.  This is preference, not a requirement.
     gbias('@bias.lis', procbias, rawpath=rawdir, fl_vardq='yes')
     copy(procbias, caldir)
 
-Finally, it is recommended to inspect the result.  After all that processed
+Finally, it is recommended to inspect the result.  After all, that master
 bias will affect every other frames we will reduce, might as well make sure
 it looks okay.
 
@@ -46,3 +55,6 @@ it looks okay.
 
     gdisplay(procbias, 1, fl_paste='no')
 
+.. image:: _graphics/masterbias.png
+   :scale: 40%
+   :align: center

@@ -6,12 +6,21 @@
 Get the data
 ************
 
+.. image:: _graphics/GMOSIFU-ProcessChart_Data.png
+   :scale: 20%
+   :align: right
+
+
 Searching the archive
 =====================
 
+.. todo:: search queries, screenshots.  programs, specific science frames,
+          identify associated calibrations, std star.
 
 Prepared tutorial data
 ======================
+
+???
 
 ::
 

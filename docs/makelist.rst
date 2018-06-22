@@ -6,6 +6,10 @@
 Create the input file lists
 ***************************
 
+.. image:: _graphics/GMOSIFU-ProcessChart_List.png
+   :scale: 20%
+   :align: right
+
 Now that we have identified the data we need and downloaded it from the
 archive, we can create input file lists that we will feed to the IRAF
 tasks rather than having to type all the input files again and again.
@@ -28,6 +32,9 @@ now on.
 
 Biases
 ======
+Going through the archive, we found that these raw biases are a good match
+for our data.  We will use all these to make a master bias.
+
 +------------------------+----------------------+
 | Biases                                        |
 +------------------------+----------------------+
@@ -61,7 +68,8 @@ from the reduced standard star.
 
 For an overview of the standard star reduction, see the diagram in Appendix A.
 
-.. todo:: I need to provide the steps any way somewhere since there are some differences, the apsum thing for example.
+From the archive search, we found these data for the standard star and its
+calibration files.
 
 +--------------+------------------------+-----------------------+
 | Standard Star                                                 |
@@ -78,18 +86,21 @@ For an overview of the standard star reduction, see the diagram in Appendix A.
 | ``S20060331S0055.fits``.                                      |
 +--------------+------------------------+-----------------------+
 
-Because we will not reduce the standard star rather just focus on the steps
+Because we will not reduce the standard star and rather just focus on the steps
 specific to the sensitivity function, this is the only list we will need::
 
     gemlist S20060331S 55 > std.lis
 
+If you were to reduce the standard star fully, you would create a list for
+the flat and for the arc, like we do below for the science data.
 
 
 Science Exposures
 =================
-This is a subset of that source's observation.  We will work with only two
-cubes.  In fact, in the interest of time we will reduce only one, the second
-is provided to you for the last steps, IQ assessment and the cube combination.
+In the table below is a subset of that source's observation sequence.  We will
+work with only two cubes.  In fact, in the interest of time we will reduce only
+one, the second is already reduced and provided to you for the last steps:
+the IQ assessment and the cubes stacking.
 
 We use lists for the science exposures, which makes sense since normally we
 do reduce several exposures, but we will use lists for the single flat and
