@@ -5,3 +5,7 @@ border-left: 2px solid red;
 border-right: 2px solid red;
 background-color: #ff6347
 }
+
+.strike {
+    text-decoration: line-through;
+}
