@@ -43,8 +43,9 @@ effectively using all the light in the aperture regardless of position.
 In the picture below, each hexagon represent a fiber, each one is a spectrum.
 They will all be summed together.
 
-??? screenshot of gfdisplay of the stx file.
-
+.. image:: _graphics/standard-gfdisplay.png
+   :scale: 90 %
+   :align: center
 ::
 
     imdelete('astxeqbrg@std.lis')

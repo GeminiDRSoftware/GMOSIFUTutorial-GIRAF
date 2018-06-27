@@ -5,26 +5,57 @@
 *******************************
 Calculate the response function
 *******************************
+.. image:: _graphics/GMOSIFU-ProcessChart_Science.png
+   :scale: 20%
+   :align: right
 
-??? not using twilight flat.  usually not taken as same position, so doesn't
-???  represent the flexure correctly anyway.   GCAL flats are flat enough.
-??? JT has not found the twilight useful at all.
+.. image:: _graphics/GMOSIFU-DRChart_response.png
+   :scale: 20%
+   :align: right
 
-??? what is the response curve
+The response function represents the relative fiber throughputs for the
+IFU unit.  It is derived from the flat field.
+
+A twilight can be used to
+ensure the flatness of the field of view, however that twilight needs to
+be obtained at the same position and elevation as the target to match the
+flexure.  That is rarely the case for the twilight obtained as part of the
+Gemini Baseline Calibration.
+
+Based on experience from several Gemini staff, the twilight has not been
+found useful at all.  The GCAL flat is sufficiently flat within the small IFU
+field-of-view anyway.
+
+Calculating the response curve is simple and quick.  Note that we do not use
+the default value for ``order`` and ``func``.  Setting ``order=45`` and
+``func='spline3'`` seem to work better.
+
+|
 
 ::
 
     for flat in iraf.type('flat.lis', Stdout=1):
-        imdelete(flat+'_resp')
+        flat = flat.strip()
+        iraf.imdelete(flat+'_resp')
+        iraf.gfresponse('eqbrg'+flat, outimage=flat+'_resp', sky='', \
+                        order=45, func='spline3', sample='*', \
+                        fl_fit='yes', fl_inter='no')
 
-        gfresponse('eqbrg'+flat, outimage=flat+'_resp', sky='', \
-                   order=95, func='spline3', sample='*', fl_fit='yes', \
-                   fl_inter='no')
+Let us have a look at it.
 
 ::
 
     for flat in iraf.type('flat.lis', Stdout=1):
-        gfdisplay(flat+'_resp', version='1')
+        flat = flat.strip()
+        iraf.gfdisplay(flat+'_resp', 1, version='1')
 
+::
 
-??? screenshot of spectrum
+    - Press <spacebar> to plot the spectrum under the cursor.
+
+.. image:: _graphics/response.png
+   :scale: 90%
+   :align: center
+
+The response spectra should always hover around 1 because of the
+normalization across all the fibers.
