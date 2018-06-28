@@ -29,6 +29,7 @@ GMOS IFU-1 Data Reduction Tutorial - Gemini IRAF
    preprocscience
    crrejection
    qeextractscience
+   badcolumn
    transform
    skysub
    specphotcalib

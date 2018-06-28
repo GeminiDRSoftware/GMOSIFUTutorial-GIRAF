@@ -5,17 +5,34 @@
 *******************
 Rectify the spectra
 *******************
+.. image:: _graphics/GMOSIFU-ProcessChart_Science.png
+   :scale: 20%
+   :align: right
 
-Angstrom per pixel
-==================
+.. image:: _graphics/GMOSIFU-DRChart_transform.png
+   :scale: 20%
+   :align: right
 
-??? pymosaic struggles when the cubes have different scales
-??? it is safer to set dw here and have transform do the resampling
-??? then pymosaic will just have to shift to match wavelength
+Angstroms per pixel
+===================
+For most program, several exposures, hence several cubes, will need to be
+combined together to reach the required signal-to-noise.  This is done
+with James Turner's ``pymosaic``.  We will use it later.  But to make that
+future step more robust there is something we can do here at the rectification
+step.  That is to ensure that all our cubes have the wavelength scale, ie.
+that the "angstroms per pixel" value is the same for all.
 
-??? what to set dw to then?
-??? do a quick run of gftransform on the first image, check what dw
-???  it used, then use that.
+If the data have been taken all on the same night, it is very likely that the
+automatic setting will be the same of all the cubes anyway.  However, why
+not make sure of it?  It takes 1 minute and might save a lot more
+time later.
+
+So the question is what scale to use.  An easy way to figure that out is
+to run ``gftransform`` as a test frame and see what the automatic algorithm
+selects.  Then enforce the use of that value for all the other frames.
+
+Let us do that now.  First we set a couple variables, then we launch
+``gftransform``.
 
 ::
 
@@ -24,35 +41,51 @@ Angstrom per pixel
 
 ::
 
-    imdelete('teqxbrg'+test, verify='no')
+    imdelete('txeqxbrg'+test, verify='no')
 
-    gftransform('eqxbrg'+test, wavtraname='erg'+arc, fl_vardq='no')
+    gftransform('xeqxbrg'+test, wavtraname='erg'+arc, fl_vardq='no')
+
+The screen outputs gives you the value right away.  Look for the value of
+``dw``.  The software sets it to ``0.462036``.  We can use ``0.46`` for
+all the cubes.
+
+For automation purposes, know that the scale is also stored in the output's
+header, in the ``CD1_1`` parameter of the World Coordinate System (WCS).
 
 ::
 
-    hselect('teqxbrg'+test+'[sci,1]', 'CD1_1', 'yes')
-
+    hselect('txeqxbrg'+test+'[sci,1]', 'CD1_1', 'yes')
 
 
 Rectify
 =======
 
-??? set dw to what the other cube used.
+Now we just run ``gftransform`` on all the science frames enforcing the
+wavelength scale to be ``0.46``.
 
 ::
 
-    dw = ???
+    dw = 0.46
 
 ::
 
-    imdelete('teqxbrg@sci.lis', verify='no')
+    imdelete('txeqxbrg@sci.lis', verify='no')
 
     for sci in iraf.type('sci.lis', Stdout=1):
-        gftransform('eqxbrg'+sci, wavtraname='erg'+arc, fl_vardq='yes', \
-                    dw=dw)
+        iraf.gftransform('xeqxbrg'+sci, wavtraname='erg'+arc, dw=dw, \
+                         fl_vardq='yes')
+
+
+We can have a quick look at the rectify data.  Note how the sky lines are
+now straight instead of curved.
 
 ::
 
     for sci in iraf.type('sci.lis', Stdout=1):
-        gfdisplay('teqxbrg'+sci, version='1')
+        sci = sci.strip()
+        iraf.display('txeqxbrg'+sci+'.fits[sci,1]', 1)
+        iraf.gfdisplay('txeqxbrg'+sci, 1, version='1')
 
+.. image:: _graphics/transform_after.png
+   :scale: 90%
+   :align: right

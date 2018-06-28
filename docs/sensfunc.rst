@@ -46,6 +46,7 @@ They will all be summed together.
 .. image:: _graphics/standard-gfdisplay.png
    :scale: 90 %
    :align: center
+
 ::
 
     imdelete('astxeqbrg@std.lis')

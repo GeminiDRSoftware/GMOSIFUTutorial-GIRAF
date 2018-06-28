@@ -2,9 +2,9 @@
 
 .. _response:
 
-*******************************
-Calculate the response function
-*******************************
+*****************
+Response function
+*****************
 .. image:: _graphics/GMOSIFU-ProcessChart_Science.png
    :scale: 20%
    :align: right
