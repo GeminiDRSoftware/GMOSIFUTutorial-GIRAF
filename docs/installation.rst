@@ -165,7 +165,7 @@ Data package
 The data needed for this tutorial is packaged in this downloadable
 compressed archive file:
 
-    `<http://www.gemini.edu/?????>`_
+    `<http://www.gemini.edu/?????/GMOSIFU_Tutorial>`_
 
 The document you are reading now is also contained in PDF and HTML in that
 download.
@@ -181,3 +181,6 @@ directory we will be using throughout the tutorial.  All input data are
 located in ``tutorial_data``.  The ``redux`` directory is where we will work.
 The ``calibrations`` directory is where we will store the processed calibration
 we will create.
+
+The documentation, ie. this tutorial, is also included in the data package for
+completeness, in ``docs/html`` and ``docs/pdf``.

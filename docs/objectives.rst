@@ -29,8 +29,7 @@ Expected Duration of Live Tutorial:  4 hours.
 In this tutorial, the reader will:
 
 * Learn how to use the Gemini Observatory Archive to retrieve the data and
-  necessary calibration files.  ??? remove if I run out of time to write that
-  part of the tutorial.
+  necessary calibration files.
 * Learn the standard way to reduce GMOS IFU-1 data.
 * Learn how to complete certain data sensitive steps interactively for better
   results.

@@ -18,7 +18,8 @@ The sensitivity function is calculated from the spectrophotometric standard.
 
 In the interest of time, we will skip the reduction of the star standard since
 it is essentially the same steps as for the reduction of the science, which we
-will cover later.  We refer the reader to ??? appendix ??? for an overview of the
+will cover later.  We refer the reader to Appendix 1 - Standard Star for an
+overview of the
 standard reduction steps.
 
 .. todo::  appendix for overview of reduction of std star.

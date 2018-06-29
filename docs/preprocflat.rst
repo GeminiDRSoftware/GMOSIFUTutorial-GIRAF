@@ -60,7 +60,7 @@ is no need for the interactive mode.  This step takes a few minutes to run.
 
 We can check the extracted spectra with ``gfdisplay``.  Once the reconstructed
 image shows up, put the cursor on any hexagon and press the <space> bar,
-a spectrum plot will show up.  Notice the big jump around ??? Angstrom.  That
+a spectrum plot will show up.  Notice the big jump around 5100 Angstrom.  That
 location is where two CCDs meet.  That jump is due to difference in quantum
 efficiency.  Clearly, we would not want to use this flat as a flat field.  It
 will do fine as a *trace reference*.

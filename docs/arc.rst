@@ -151,7 +151,7 @@ To do the line mapping, there is a chart on the Gemini website:
 The first plot from that page is the one we need.  Those plots are bit hard
 to read.  The lines we will have no mark are shown in red.
 
-.. image:: _graphics/CuArB600_600.gif
+.. image:: _graphics/CuArB600_600.png
    :scale: 80 %
    :align: center
 

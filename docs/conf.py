@@ -93,6 +93,9 @@ html_theme = 'alabaster'
 # documentation.
 #
 html_theme_options = {
+    'logo': 'Gemini250px_email.jpg',
+    'description': 'GMOS IFU-1 Data Reduction Tutorial - Gemini IRAF',
+    'description_font_style': 'bold',
     'show_related': 'true',
 }
 
