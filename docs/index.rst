@@ -45,7 +45,6 @@ Appendix
    :maxdepth: 1
 
    appendix/standardstar
-   appendix/cosmetics
 
 
 Indices and tables
