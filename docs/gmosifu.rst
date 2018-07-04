@@ -10,7 +10,7 @@ Hardware
 ========
 The GMOS Integral Field Unit (IFU) offers spatially resolved spectroscopy.
 For each point in the field of view, a spectrum is obtained.  The GMOS IFU
-is fiber fed.  It uses a lenslet array with each lenslet coupled to a fiber.
+is fiber-fed.  It uses a lenslet array with each lenslet coupled to a fiber.
 The other end of the fibers are then organized into a linear array at the
 nominal location of the spectrograph's slit.  Some fibers are sampling an empty
 area of the sky for sky subtraction.

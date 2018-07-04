@@ -15,7 +15,7 @@ Create the cubes
 
 Finally!  We are ready to make a cube of our science data.  The task to
 use is ``gfcube``.  This routine will resample of the fibers into a 3-D
-structure with the spatial coordinates on the x and y axis, and the
+data structure with the spatial coordinates on the x and y axis, and the
 wavelength on the z (depth) axis of the cube.  The spatial pixel scale
 is by default 0.1 arcsecond per pixel.
 

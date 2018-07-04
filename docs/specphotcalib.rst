@@ -69,5 +69,5 @@ We can have a look at the spectra.
 As you can see, the spectrum of the top left source has changed shape.  It
 looks a bit more like a real physical source.  It is still not quite right
 but that is because there is differential atmospheric refraction.  We will
-correct for that in the next chapter, when we repackage the data in a
+correct for that in the next chapter when we repackage the data into a
 data cube.

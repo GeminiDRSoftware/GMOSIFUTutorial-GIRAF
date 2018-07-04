@@ -30,6 +30,7 @@ The first step is to identify the affect pixels and create a mask for them.
 |
 |
 |
+|
 
 
 ::
@@ -44,10 +45,10 @@ By hovering the cursor over the image, we find that columns 3994 to 3996
 are bad in their entirety and that for rows 18 to 134, it is columns 3994
 to 4002 that are affected.
 
-The format for the text version is "x1 x2 y1 y2".  We add those boxes to
+The format for the text version of the mask is "x1 x2 y1 y2".  We add those boxes to
 a text file, then we use ``text2mask`` to convert that into an IRAF ``pl``
-file which is required later on.  ``text2mask`` need to know the size of
-the output which must match the image we want to correct.  In our case,
+file which is required later on.  ``text2mask`` needs to know the size of
+the output mask image and that must match the image we want to correct.  In our case,
 that is 6218 by 742.  You can get that information with ``fxhead``.
 
 ::
@@ -68,7 +69,7 @@ that is 6218 by 742.  You can get that information with ``fxhead``.
 
 The next series of commands simply use ``fixpix`` to interpolate the
 bad columns, then add the bad pixel mask to the DQ plane.   The ``copy``'s
-and ``imcopy``'s are to ensure that the work is done temporary
+and ``imcopy``'s are to ensure that the work is done on temporary
 copies instead of the input file, just in case something goes wrong and
 we want to do it again.
 

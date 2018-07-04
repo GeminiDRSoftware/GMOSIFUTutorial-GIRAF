@@ -100,7 +100,7 @@ goes through the points.
 
 This fit is fine, we then would leave the interactive mode as follow
 
-::
+.. code-block:: text
 
     - Type "q" to quit the "fit window".
     - Type "q" again to quit the "spectrum window".
@@ -149,13 +149,15 @@ To do the line mapping, there is a chart on the Gemini website:
     `<https://www.gemini.edu/sciops/instruments/gmos/calibration/example-cal-data/cuar-spectra>`_
 
 The first plot from that page is the one we need.  Those plots are bit hard
-to read.  The lines we will have no mark are shown in red.
+to read.  The lines we will have to mark are shown in red below.
 
 .. image:: _graphics/CuArB600_600.png
    :scale: 80 %
    :align: center
 
-Let us zoom onto those two boxes and mark the lines::
+Let us zoom onto those two boxes and mark the lines:
+
+.. code-block:: text
 
     - To zoom in, "w", "e"-"e" to define the box.
     - To mark a line, "m" with the cursor on the line.
@@ -181,7 +183,7 @@ This is what the spectrum should look like:
 
 Now we fit.  Look for the parabola.
 
-::
+.. code-block:: text
 
     - Type "f".
 
@@ -192,7 +194,7 @@ Now we fit.  Look for the parabola.
 The fit is good, the lines were identified correctly, now let's identify
 more.
 
-::
+.. code-block:: text
 
     - Quit the "fit window" with "q".  (Just once!)
     - Type "l" to automatically fit the lines the tool can fit now.
@@ -203,7 +205,7 @@ more.
 Now we will semi-manually identify the other lines.  Not all of them just
 enough to have a better coverage.
 
-::
+.. code-block:: text
 
     - With the cursor on a line, type "m".
     - Next to the text box, there will be a proposed wavelength with
@@ -217,8 +219,8 @@ enough to have a better coverage.
    :align: center
 
 If a line mark returns "INDEF", it is because the software cannot associate
-it with one on the line list.  Just press "``Return``" then bring the cursor
-back on it and delete it with "``d``".
+it with one of the lines in the line list.  Just press "``Return``" then bring
+the cursor back on it and delete it with "``d``".
 
 Keep at it, when you are done with a zoomed in section, zoom out and
 zoom in on the next section.  Repeat until the whole spectrum as marked

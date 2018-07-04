@@ -18,16 +18,20 @@ The sensitivity function is calculated from the spectrophotometric standard.
 
 In the interest of time, we will skip the reduction of the star standard since
 it is essentially the same steps as for the reduction of the science, which we
-will cover later.  We refer the reader to Appendix 1 - Standard Star for an
+will cover later.  We refer the reader to Appendix 1, :ref:`standardstar`, for an
 overview of the
 standard reduction steps.
-
-.. todo::  appendix for overview of reduction of std star.
 
 
 Here we start with an already reduced standard star exposure and we proceed
 to demonstrate the two extra steps that will lead to the sensitivity function.
-Let's copy it over to ``redux``, it's in the ``tutorial_data`` directory.
+Let's copy the pre-reduced data over to ``redux``, it is in the
+``tutorial_data`` directory.
+
+|
+|
+|
+|
 
 ::
 
@@ -67,27 +71,27 @@ Let's have a look a the summed spectrum.
    :scale: 90 %
    :align: center
 
-This is the shape the telescope and instrument see.  The real standard
+This is the shape the telescope and instrument let through.  The real standard
 star flux does not fall off like that in the blue.  That's what the
 sensitivity function will correct for.
 
-When you are ready to quit the interactive plot, press ``q``.
+When you are ready to quit the interactive plot, press "``q``".
 
 
 
 Calculate the sensitivity function
 ==================================
 In a very simplified picture, the sensitivity function is the difference
-between what was observed and what the star spectrum really should look like.
+between what was recorded and what the star spectrum really should look like.
 It is the shape of the spectrum that matters, not the absolute flux.
 
 This sensitivity correction will be applied to our science observations.
 
 Find the star
 -------------
-So, we need to know what the standard star spectrum should look like.  IRAF
+So, we need to know what the standard star spectrum looks like.  IRAF
 provides wavelength-flux tables for a large collection of common
-spectrophotometric standards, for both hemisphere.  Those are located in
+spectrophotometric standards, for both hemispheres.  Those are located in
 the ``onedstds`` directory.  From the PyRAF session::
 
     dir onedstds
@@ -108,8 +112,8 @@ star, LLT 4364, is in the subdirectory ``ctiocal``::
 The file is named ``l4364.dat``.  It is the ``l4364`` part that we will need
 to provide as ``starname`` to ``gsstandard`` below.
 
-Set input parameters
---------------------
+Set the input parameters
+------------------------
 Now that we know in which directory our star flux table is located and what
 "name" IRAF uses for it, let's define some variables we will use in the call
 to ``gsstandard``.
@@ -132,7 +136,7 @@ perfectly adequate for Gemini South (Cerro Pachon).   For Gemini North,
 one would use ``gmos$calib/mkoextinct.dat``.
 
 Don't worry too much about the statement that sets the ``input`` variable.
-It is making use of PyRAF and Python to return the first line in the file.
+It is making use of IRAF and Python to return the first line in the file.
 There's only one line in our current case, but it still need to be read and
 assigned to ``input``.   One could also just type the full filename in the
 ``gsstandard`` command, but we are trying in this tutorial to show how
@@ -141,9 +145,9 @@ instructions to a different set of GMOS IFU-1 data.
 
 Call ``gsstandard``
 -------------------
-Now we can run the task that will calculate the sensitiviity function.
+We now run the task that will calculate the sensitivity function.
 We will run it interactively.  Most of the time this is not necessary but
-this data set has weak signal in the blue and a big absorption feature. It
+this dataset has weak signal in the blue and a big absorption feature. It
 can throw the fit a bit.
 We can correct that interactively.  Even in "normal" cases, it never hurts
 to run this step interactively even if just to visually verify that the fit
@@ -167,11 +171,11 @@ it proposes is acceptable.
    :scale: 90 %
    :align: center
 
-The little white boxes indicate the regions that are being used for the
-fit of the shape of the signal.  As we can see in the yellow ovals, some of
+The little white boxes indicate the regions that are being used to
+fit the shape of the signal.  As we can see in the yellow ovals, some of
 those regions fall on features rather than continuum.
 
-::
+.. code-block:: text
 
     - Point on the box to delete and type 'd'.
     - To add a region (not necessary here), point and type 'a'.
@@ -181,7 +185,7 @@ those regions fall on features rather than continuum.
       type 'e' again.   To zoom out, 'w', 'a'.
     - When done type 'q' to move on to the next step.
 
-::
+.. code-block:: text
 
     - Answer 'yes' to the "Fit aperture 1 interactively?" question.
 
@@ -195,7 +199,7 @@ One thing at this step that you might want to change is the order of the fit.
 Let's try to fix that rapid drop of the fit on the red end to get a smoother
 extrapolation.
 
-::
+.. code-block:: text
 
     - Type ":order 5", to change the order from "7" to "5".
     - Then type "f" to draw the new fit, "g" to redraw with only

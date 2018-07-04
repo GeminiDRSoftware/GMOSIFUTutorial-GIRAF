@@ -15,14 +15,14 @@ Trace reference
 
 
 The flat field is the only exposure where all the fibers are well illuminated.
-It is uses to define the position of the fiber light on the detector.  This
+It is uses to define the position of the light on the detector.  This
 information is needed to extract the arc spectra.  A reference flat is also
 needed identify the position of the bundle gaps.
 
-For the science reduction, the flat needs to have been corrected for quantum
-efficiency differences between the chips.  This is wavelength dependent.
-So, we need the flat for the wavelength calibration but we need to the
-wavelength calibration to produce the science flat.
+For the science reduction, the flat needs to have been corrected for
+differences in quantum efficiency between the chips.  This is wavelength
+dependent. So, we need the flat for the wavelength calibration but we need
+to the wavelength calibration to produce the science flat.
 
 This circular requirement forces us to first reduce the flat without the
 QE correction and use that as reference to extract the arc and calculate
@@ -63,7 +63,7 @@ image shows up, put the cursor on any hexagon and press the <space> bar,
 a spectrum plot will show up.  Notice the big jump around 5100 Angstrom.  That
 location is where two CCDs meet.  That jump is due to difference in quantum
 efficiency.  Clearly, we would not want to use this flat as a flat field.  It
-will do fine as a *trace reference*.
+will do fine as a *trace reference* however.
 
 ::
 
@@ -71,7 +71,7 @@ will do fine as a *trace reference*.
         flat = flat.strip()
         iraf.gfdisplay('erg'+flat, 1, version='1')
 
-::
+.. code-block:: text
 
     - Hit <space> with the pointer on an hexagon.
 

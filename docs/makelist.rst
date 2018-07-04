@@ -10,9 +10,9 @@ Create the input file lists
    :scale: 20%
    :align: right
 
-Now that we have identified the data we need and downloaded it from the
-archive, we can create input file lists that we will feed to the IRAF
-tasks rather than having to type all the input files again and again.
+When we looked at the archive we  identified the data that were needed. Now we can
+create input file lists that we will feed to the IRAF
+tasks.  We do that rather than having to type all the input files again and again.
 Using lists will also allow us to automated several tedious bookkeeping
 tasks later on.
 
@@ -33,7 +33,8 @@ now on.
 Biases
 ======
 Going through the archive, we found that these raw biases are a good match
-for our data.  We will use all these to make a master bias.
+for our data.  We will use all these to make the master bias
+``S20060314S0091_bias.fits``.
 
 +------------------------+----------------------+
 | Biases                                        |
@@ -59,14 +60,15 @@ Standard Star
 Normally, there's only one exposure taken for the standard star.  For some
 reason, in this case, four were taken.  After reducing them, it was found
 that they are all well exposed so anyone of them could be used.  The third
-one is used in this tutorial simply because it's the one with the best
+one is used in this tutorial simply because it is the one with the best
 signal.
 
 In this tutorial, we do not cover the reduction of the standard in the
 interest of time.  Though we will show how to get the sensitivity function
 from the reduced standard star.
 
-For an overview of the standard star reduction, see the diagram in Appendix A.
+For an overview of the standard star reduction, see the diagram in
+Appendix 1, :ref:`standardstar`.
 
 From the archive search, we found these data for the standard star and its
 calibration files.
@@ -97,10 +99,10 @@ the flat and for the arc, like we do below for the science data.
 
 Science Exposures
 =================
-In the table below is a subset of that source's observation sequence.  We will
+In the table below is a subset of our source's observation sequence.  We will
 work with only two cubes.  In fact, in the interest of time we will reduce only
-one, the second is already reduced and provided to you for the last steps:
-the IQ assessment and the cubes stacking.
+one, the second is already reduced and provided to you for the last step,
+the cubes stacking.
 
 We use lists for the science exposures, which makes sense since normally we
 do reduce several exposures, but we will use lists for the single flat and
@@ -123,8 +125,9 @@ and for most commands, there won't be a need to modify anything.
 | Using sensitivity function: ltt4364_629_20060331_sens.fits |
 +--------------+------------------------+--------------------+
 
-Generating the lists.  (We do not add image 45 in the interest of time, normally
-you would.) ::
+Generate the lists.
+
+::
 
     gemlist S20060327S 43 > sci.lis
     gemlist S20060327S 44 > flat.lis
@@ -135,7 +138,7 @@ We are now good to go!
 .. note::
 
     In PyRAF programming syntax, the ``gemlist`` call would look like
-    this:  ``gemlist('S20060327S', '43', Stdout='sci.lis')``.  This syntax is used
+    this:  ``iraf.gemlist('S20060327S', '43', Stdout='sci.lis')``.  This syntax is used
     when wrapping with Python, or when wanting to use variables.  We will be using
     that syntax for the rest of the tutorial.
 

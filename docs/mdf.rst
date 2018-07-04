@@ -14,7 +14,7 @@ Verify the MDF
    :scale: 20%
    :align: right
 
-The mapping of the fibers, how many, from which bundle they are from, which
+The mapping of the fibers, how many there are, from which bundle they are from, which
 ones are dead, is all contained in the MDF, the Mask Definition File that is
 found in the Gemini IRAF package.
 
@@ -32,7 +32,7 @@ Here we will show how to spot the problem, then we will show you how to correct 
 Verify the MDF
 ==============
 
-The GMOS IFU MDFs are located in ``gmos$data``.  We will pick the ones that
+The GMOS IFU MDFs are located in ``gmos$data``.  We will pick the one that
 matches the CCDs and copy it over.  Here is the complete list::
 
     dir gmos$data/*ifu*.fits ncols=1
@@ -117,8 +117,8 @@ bundle is 50 fibers.  Therefore, at each gap, the last fiber of a bundle must
 identified with a number that is a factor of 50, eg. 150, 300, and the first
 fiber of a bundle but be the +1 fiber, eg. 151, 301.
 
-To zoom in, the interactive commands are ``w``, followed by ``e``-``e`` to
-defined the lower-left and upper-right corners.  ``w`` and ``a`` to zoom back
+To zoom in, the interactive commands are "``w``", followed by "``e``-``e``" to
+defined the lower-left and upper-right corners.  "``w``" and "``a``" to zoom back
 out.
 
 Here is the first bundle gap.  The last fiber of bundle 1 is 50, the first
@@ -146,7 +146,7 @@ the full window to maybe spot a bundle with a "hole" in it.
    :scale: 90 %
    :align: center
 
-Let's zoom in.  Again use the ``w``-``e``-``e`` interactive commands.
+Let's zoom in.  Again use the "``w``-``e``-``e``" interactive commands.
 
 .. image:: _graphics/MDF631-missing.png
    :scale: 90 %
@@ -162,15 +162,17 @@ Sometimes, it is necessary to look at many bundle gaps to spot the bundle
 with the missing fiber.  When more than one fiber is missing, it is even
 more tricky to correctly identify which fibers need "turning off" in the MDF.
 Then, once we have a possible solution, we need to try it out and inspect
-the fiber identification again, and possibly again, until the identification
+the fiber identification again, and possibly again, and again, until the identification
 comes out clean.
 
 This is mostly just a heads-up, it is not a frequent occurrence but it is
-critical to understand the problem and how to fix it, which is why we focus
+critical to understand the problem and know how to fix it, which is why we focus
 on it here.
 
 Let's get out of the extraction routine.  There is no point in extracting
-since we know there's a problem with the identification.  So::
+this since we know there's a problem with the identification.  So,
+
+.. code-block:: text
 
     - Type "q" to get out of the plot
     - Answer "NO" (uppercase) to all the questions.
@@ -182,7 +184,7 @@ Fix it!
 
 Update the MDF
 --------------
-The MDF is stored in the FITS binary table.  In IRAF, to check the content
+The MDF is stored as FITS binary table.  In IRAF, to check the content
 of a FITS table, there is the task ``tread``.
 
 ::
@@ -193,14 +195,15 @@ of a FITS table, there is the task ``tread``.
    :scale: 100 %
    :align: center
 
-The info in this file is used for the extraction, our current issue, and for
+The info in this file is used for the extraction and for
 the image reconstruction.  The column we are interested in right now is the
 ``BEAM`` column.  When the value is ``1``, the fiber is "good" or "present".
 When the value is ``-1``, the fiber is missing and should be ignored during
 the extraction step.
 
 In our case, to fix our MDF, we need to give fiber 631 a ``BEAM`` value of
-``-1``.  We use the ``tcalc`` IRAF task.
+``-1``.  We use the ``tcalc`` IRAF task.  (Exit ``tread`` first by typing
+``^D quit``.)
 
 ::
 
@@ -238,7 +241,7 @@ A few extra seconds to wait in favor of simplicity.
 
     gfextract('rg'+flat, fl_inter='yes')
 
-If we zoom in on fiber 631 expected location, now we see that it is correctly
+If we zoom in on fiber 631's expected location, now we see that it is correctly
 ignored in the fiber identification.
 
 .. image:: _graphics/MDF631-ignored.png
@@ -259,7 +262,7 @@ of yes or no questions that can be error prone.  So, let us for now just
 exit with a series of "NO" like we did above, and re-run the extraction
 non-interactively (next chapter).
 
-::
+.. code-block:: text
 
     - Type "q" to quit the interactive plot.
     - Answer "NO" (uppercase) to every question.
@@ -267,7 +270,7 @@ non-interactively (next chapter).
 
 If not fixed...
 ===============
-Before we move on, there is another way to maybe spot that the extraction
+Before we move on, there is another way to *maybe* spot that the extraction
 is not being done properly.  Later on, in the scattered light subtraction
 step, the bundle gaps position are being estimated.  The positions will be
 displayed on the screen.
@@ -276,7 +279,7 @@ displayed on the screen.
    :scale: 100 %
    :align: center
 
-Notice how the third from last gap and the next are a y-interval of only 3
+Notice how the third from last gap and the next one have a y-interval of only 3
 pixels while the previous ones 6 to 11 pixel wide. That's a sign.  Also,
 if you display non-extracted image and compare those gaps with the gaps on
 the image, you will see that gaps after the missing fiber do not match.

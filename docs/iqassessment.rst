@@ -15,7 +15,7 @@ look at are:
 
 1) Whether or not all the sources are in the field-of-view at all
    wavelengths.  If the DAR is important and the source is on the edge of
-   the field-of-view the blue end might fall off the FOV.
+   the field-of-view, the blue end might fall off it.
 
 2) The seeing.  Obviously, one needs a point source for that.
 
@@ -64,7 +64,7 @@ to fit either a Moffat or Gaussian profile to measure the
 Full Width at Half Maximum (FWHM) or seeing.
 
 If you have several cubes, especially if taken on different nights, it is
-important to verify the seeing.  It is likely that you will not to combine
+important to verify the seeing.  It is likely that you will not want to combine
 good seeing cubes with bad seeing cubes.  Of course that depends on your
 scientific objectives.
 

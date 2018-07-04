@@ -14,16 +14,17 @@ Pre-processing of the science frames
    :align: right
 
 We are finally able to start reducing the science frames.  Here we will
-attache a MDF, remove the bias and the overscan, then model and remove
+attach a MDF, remove the bias and the overscan, then model and remove
 the scattered light.
 
-We will stop there because the next step is to remove the cosmic and ray
+We will stop there because the next step is to remove the cosmic rays
 and we want to do that on an "non-extracted" frame.
 
 MDF, bias and overscan
 ======================
 Let us run ``gfreduce`` on the science frame to attach the MDF, and correct
-for bias and overscan.  We done this for the flat so it should feel familiar.
+for bias and overscan.  We have done this for the flat earlier so it should
+feel familiar.
 
 |
 |
@@ -55,8 +56,8 @@ light.
 The scattered light is normally weak in the science frame because the
 target is normally faint.  But the signal is still there. It is easy
 enough to fit and remove it.  One just has to be careful not to make it
-worse, for example, really do avoid any flaring or extreme values.  (See
-the chapter on the flat reduction for a full discussion.)
+worse; for example, really do avoid any flaring or extreme values.  (See
+the chapter on the flat reduction for a full discussion, :ref:`flat`.)
 
 One difference with the science frame is that the signal is too weak to
 allow the identification of the inter-bundle gaps.  But we have already
@@ -79,7 +80,7 @@ flat to run ``gfscatsub`` on the science.
                   outimage='', xorder='3,3,3', yorder='3,3,3', \
                   cross='yes', fl_inter='yes')
 
-In this case, unlike the flat, our starting value of 3 for the order works
+In this case, unlike for the flat, our starting value of 3 for the order works
 well for all three extensions.  Let us nevertheless make sure the gaps to to
 zero flux.
 
@@ -90,7 +91,7 @@ zero flux.
         for i in range(3):
             iraf.imexamine('brg'+sci+'[sci,'+str(i+1)+']', 1)
 
-::
+.. code-block:: text
 
     - Type "c" for column plots.
     - Type "l" for line plots of the gaps.

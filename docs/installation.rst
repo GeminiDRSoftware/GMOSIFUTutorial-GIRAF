@@ -85,42 +85,14 @@ Configure IRAF
 At the ``mkiraf`` prompts choose ``xterm`` and re-initialize the ``uparm`` if
 asked.
 
+
 Pyfu
 ====
-.. todo:: Is it a tarfile or a conda package.  Make sure that James at least
-          post a tarfile of the new version on the DR forum.
-
 Pyfu is software to align and combine GMOS IFU cubes.  It is written and
 maintained by James Turner.  Pyfu is a PyRAF package, ie. Python modules with
 an IRAF interface.  James has shared his software on the Gemini Data Reduction
-Forum.  It can be downloaded here::
-
-    ??? http:/to the latest version with llimit
-
-Download and unpack that tar file in your home ``iraf`` directory::
-
-    cd /Users/youraccount/iraf
-    tar xvzf pyfu-0.11.tar.gz
-
-Now let's tell IRAF where to find it.  With your favorite editor, open or
-create the file ``/Users/youraccount/iraf/loginuser.cl``.  Then add these
-lines::
-
-    reset pyfu = "/Users/youraccount/iraf/pyfu-0.11/pyfu/"
-    task pyfu.pkg = pyfu$pyfu.cl
-    keep
-
-
-Finally, let's tell Python where to find it.  With your favorite editor,
-open your /Users/youraccount/.bash_profile and add this line::
-
-    export PYTHONPATH=${PYTHONPATH}:/Users/youraccount/iraf/pyfu-0.11
-
-Save the file, exit back to shell and activate this new setting with::
-
-    source .bash_profile
-
-??? Use this instead if James makes a conda package for pyfu.
+Forum.  It can be install with ``conda`` once the Gemini conda channel is
+configured.
 
 ::
 
@@ -128,6 +100,7 @@ Save the file, exit back to shell and activate this new setting with::
     source activate geminiconda
     conda install pyfu
 
+That is it!
 
 
 L.A.Cosmic
@@ -156,6 +129,8 @@ lines::
     task lacos_spec = "/Users/youraccount/iraf/lacos_spec.cl"
     keep
 
+
+.. _install-data-label:
 
 Data package
 ============

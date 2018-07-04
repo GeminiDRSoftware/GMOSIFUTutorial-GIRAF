@@ -31,11 +31,11 @@ In this tutorial, the reader will:
 * Learn how to use the Gemini Observatory Archive to retrieve the data and
   necessary calibration files.
 * Learn the standard way to reduce GMOS IFU-1 data.
-* Learn how to complete certain data sensitive steps interactively for better
+* Learn how to complete certain sensitive steps interactively for better
   results.
 * Learn how to detect certain data reduction issues and how to fix them.
     * Fix an MDF for vignetted fibers
-    * Interactively do the arc line identification when the automatic algoritm fails.
+    * Interactively do the arc line identification when the automatic algorithm fails.
 
 
 This tutorial will not make you an expert at GMOS IFU data reduction.  It will

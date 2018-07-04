@@ -15,7 +15,7 @@ QE correction and extraction of the science
 
 We now correct the science frame for quantum efficiency effects and
 extract it.  We use the arc for the QE correction, and we apply the
-response function during the extraction and we use the extracted flat
+response function during the extraction.  Also, the extracted flat is used
 as a trace reference.
 
 |
@@ -43,7 +43,7 @@ First let us define our variables.
 
     arc = iraf.head('arc.lis', nlines=1, Stdout=1)[0].strip()
 
-We complete the extraction of the science spectra.
+We correct for QE and complete the extraction of the science spectra.
 
 ::
 
@@ -66,16 +66,16 @@ Let us have a first look at the extracted data.
         sci = sci.strip()
         iraf.gfdisplay('eqxbrg'+sci, 1, version='1')
 
-The big white vertical lines are due to bad columns that heavily affects
+The big white vertical lines are due to bad columns that heavily affect
 two fiber bundles, one target bundle, one sky bundle.  It affects just a
 short wavelength range but ``gfdisplay`` just adds up the flux to create the
-image and doesn't reject extreme value, hence the nasty artifacts.
+image and doesn't reject extreme values, hence the nasty artifacts.
 
 .. image:: _graphics/science_extract-gdisplay.png
    :scale: 80%
    :align: center
 
-This is the spectrum of the central fiber of the source in the top left
+Below is the spectrum of the central fiber of the source in the top left
 corner.  The thin spikes are sky lines.  We will subtract the sky later.
 
 .. image:: _graphics/science_extract-spectrum.png

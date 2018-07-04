@@ -16,11 +16,28 @@ Cosmic Ray Rejection
 .. warning::  LIVE TUTORIAL. We will **not** run this step.  Too slow.
 
 The Gemini IRAF task ``gemcrspec`` uses the L.A.Cosmic algorithm written
-by P.G. van Dokkum to remove cosmic rays.  Specifically it makes use of the
+by P.G. van Dokkum to remove cosmic rays.  Specifically, it makes use of the
 ``lacos_spec.cl`` implementation of the algorithm.  If you followed the
 instructions in the chapter on installation, you should be ready to go.
 
-Let us make sure it is installed correctly by doing a little test.
+.. warning::  LIVE TUTORIAL.  The output of this step is available in
+   the ``tutorial_data`` directory.  For the live tutorial, we copy that
+   version over to our work directory and move on to the next step.
+
+::
+
+    iraf.copy('../tutorial_data/xbrgS20060327S0043.fits', './')
+
+|
+|
+
+----
+
+If you are not attending a live tutorial and are willing to wait, you can
+run the commands below.  Obviously, if you are using this tutorial to reduce
+your own data, you do need to run the commands below.
+
+Let us make sure it is installed correctly by doing a little smoke test.
 
 ::
 

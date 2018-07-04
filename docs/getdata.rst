@@ -10,28 +10,28 @@ Get the data
    :scale: 20%
    :align: right
 
-For this tutorial, we have already provided you with the data you will,
-even some necessary pre-reduced data (see installation chapter and
-the last section.)
+We have already provided you with the data you will need
+to complete this tutorial, even some necessary pre-reduced data.
+(See the last section of installation chapter, :ref:`install-data-label`.)
 
-However, for you own program, you will have to collect your data yourself.
-Here is a little primer on how to do that.
+For you own program, you will have to collect your data yourself,
+so here is a little primer on how to do that.
 
 
 Searching the archive
 =====================
 The primary search criterium is your program ID.  Just typing that in the
-``Program ID`` box will return everything that was in your Phase 2 that was
+``Program ID`` box will return everything that was in your Phase 2 and that was
 observed.
 
 Then you can refine your search to focus on specific targets and observation
-sequence.
+sequences.
 
 Raw biases
 ----------
 
 We start by refining the search with the date of the observation and the
-``Obs. Class``, or observation class.  Setting the ``Obs. Class`` to
+``Obs. Class``, or "observation class".  Setting the ``Obs. Class`` to
 ``science`` returns the on-target observations only, none of the calibrations
 that were part of the sequence.  We will get those later.  For now, we
 want to find the raw biases associated with the science observations specifically.
@@ -88,7 +88,7 @@ In our case, our science-flat pair is #43 and #44.
 Standard star
 -------------
 The spectrophotometric standard is defined in the program as a "partner
-calibration."  This means tha twe can find all the standard star observation
+calibration."  This means that we can find all the standard star observations
 of our program with the "program ID" and by setting ``Obs.Class`` to
 "partnerCal".
 
@@ -107,7 +107,7 @@ so that is the one we pick.
 
 Since it is observed just 4 days after
 the science, a search for raw biases will result in essentially the same
-raw biases as for the science frame; we will use the same master bias for
+raw biases as for the science frame; here we will use the same master bias for
 both science and standard.
 
 
@@ -116,6 +116,9 @@ Prepared tutorial data
 All the data needed for this tutorial is provided in the data package,
 ``GMOSIFU_Tutorial.tar.gz`` available for download at:
 
+???
+
    `<http://www.gemini.edu/blah/blah/GMOSIFU_Tutorial.tar.gz>`_
 
-See the last section of the Installation chapter for details.
+See the last section of the Installation chapter, :ref:`install-data-label`,
+for details.

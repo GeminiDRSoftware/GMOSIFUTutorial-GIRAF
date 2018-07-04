@@ -35,6 +35,7 @@ image shows up, adjust the zoom level on ``ds9`` to let you see the whole image.
     concat('bias.lis, sci.lis, flat.lis, arc.lis', Stdout='all.lis')
 
     for image in iraf.type('all.lis', Stdout=1):
+        image = image.strip()
         print('Displaying '+image+'.fits')
         iraf.gdisplay(rawdir+image, 1, fl_paste='no', fl_bias='yes')
         iraf.sleep(3)

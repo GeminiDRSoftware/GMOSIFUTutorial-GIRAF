@@ -31,8 +31,8 @@ package.  In the snippet below, we delete any outputs from a previous
 run, create the bias, then copy the processed bias to the directory where
 we will store the processed calibrations.
 
-In this tutorial, the processed
-bias will be stored there as well as the sensitivity function.  The motivation
+In this tutorial, the processed bias will be stored in a different directoy,
+same for the sensitivity function.  The motivation
 for storing the processed calibration safely out of ``redux`` is that later
 on, if we decide to restart the science reduction from scratch, we can just
 delete everything in ``redux`` knowing that the master bias and the sensitivity

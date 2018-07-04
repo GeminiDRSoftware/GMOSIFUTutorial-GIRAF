@@ -15,20 +15,20 @@ Rectify the spectra
 
 Angstroms per pixel
 ===================
-For most program, several exposures, hence several cubes, will need to be
+For most programs, several exposures, hence several cubes, will need to be
 combined together to reach the required signal-to-noise.  This is done
 with James Turner's ``pymosaic``.  We will use it later.  But to make that
-future step more robust there is something we can do here at the rectification
-step.  That is to ensure that all our cubes have the wavelength scale, ie.
+future step more robust there is something we can do here, at the rectification
+step.  We can ensure that all our cubes have the same wavelength scale, ie.
 that the "angstroms per pixel" value is the same for all.
 
 If the data have been taken all on the same night, it is very likely that the
-automatic setting will be the same of all the cubes anyway.  However, why
+automatically set wavelength scale will be the same of all the cubes anyway.  However, why
 not make sure of it?  It takes 1 minute and might save a lot more
 time later.
 
 So the question is what scale to use.  An easy way to figure that out is
-to run ``gftransform`` as a test frame and see what the automatic algorithm
+to run ``gftransform`` as a test and see what the automatic algorithm
 selects.  Then enforce the use of that value for all the other frames.
 
 Let us do that now.  First we set a couple variables, then we launch

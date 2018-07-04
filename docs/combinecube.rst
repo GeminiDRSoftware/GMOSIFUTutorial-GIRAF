@@ -13,7 +13,7 @@ The Gemini IRAF package does NOT have a routine to stack / combine the cubes.
 One of the Gemini data reduction staff member, James Turner, has written such
 a routine for his own research and has shared it on the Gemini Data Reduction
 Forum (http://drforum.gemini.edu).  See the installation chapter for details
-on download and installation instructions for the "``pyfu``" package.
+on download and install the "``pyfu``" package.
 
 In this tutorial we have reduced only one cube because of time constraints.
 We need another one if we are to combine cubes.  Let's copy another cube
@@ -77,7 +77,7 @@ you can keep clicking on "next" and the two buffers will alternate.
    :align: center
 
 
-If the images look align, ``pyfalign`` was successful and we can stack
+If the images look aligned, ``pyfalign`` was successful and we can stack
 the cubes.  We also propagate the variance to the final cube.
 
 ::

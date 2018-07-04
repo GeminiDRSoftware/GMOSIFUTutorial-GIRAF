@@ -15,7 +15,7 @@ Reduce the lamp flat
 
 The flat we extracted earlier was not corrected for quantum efficiency
 variation between the chips and was not either corrected for scattered
-light.  That extracted flat was used simple as a trace reference.
+light.  That extracted flat was used solely as a trace reference.
 
 Here we complete the proper reduction of the flat field.  We already have
 an intermediate flat that has been bias and overscan corrected and with
@@ -27,18 +27,18 @@ we follow with the QE correction and the extraction.
 
 Short note on GMOS CCDs
 =======================
-Over the life of both GMOSes, various CCDs were in the instruments.
-For GMOS-North, there were the EEV, the e2V, and now the Hamamatsu.
-For GMOS-South, the EEV and now the Hamamatsu.  This matters on many
-levels.
+Over the life of both GMOSes, various CCDs have lived in the instruments.
+For GMOS-North, there were the EEV, the e2V, and now the Hamamatsu CCDs.
+For GMOS-South, it has been the EEV and now the Hamamatsu CCDs.
+This matters on many levels.
 
 For QE, the GMOS-N e2V were deemed sufficiently identical that no QE correction
 was required.  If you try to QE correct those CCDs, it will fail as no
 solution were ever calculated.  Simply skip that step if you have GMOS-N e2V
-data.
+data.  (To recognize those, note that the raw e2V data has 6 extensions.)
 
 For the scattered light, it is the number of amps, and therefore the effective
-size of the image each one produce that matters.  As we will see below the
+size of the image each one produces that matters.  As we will see below the
 scattered light is modeled spatially on each amp separately.  When the detector
 functions in 1-amp per CCD mode, like for the old EEV, we have a wider
 surface to fit than when the detector operates in a 4-amp per CCD mode
@@ -69,7 +69,7 @@ Remove scattered light
 In the areas between bundles, some of them marked with yellow arrows below,
 there is scattered light.  The brighter the source, the brighter the stray
 light.  That light should not be there.  It is detected between the
-bundles but it is really is everywhere.  Those inter-bundle area are essential to the
+bundles but it is really everywhere.  Those inter-bundle area are essential to the
 modeling of the scrattered light and therefore its removal: it should be
 zero flux in the those area, any light there is "bad" light.
 
@@ -89,7 +89,7 @@ line plots.
 
     imexamine rgS20060327S0044.fits[sci,1] 1
 
-::
+.. code-block:: text
 
     - Type "c" for a column plot.
     - For a line plot, put the cursor in an inter-bundle area and
@@ -131,9 +131,9 @@ before running ``gffindblocks``.)
 
 Model and remove the light
 --------------------------
-Now we use the light in those gaps to create a 2-D surface of the scattered
+Now we use the light in those gaps to create a 2-D surface model of the scattered
 light present in the image.  The ``xorder`` and ``yorder`` parameters are the
-values that might have to be changed.  For one, the number of orders must
+values that might have to be changed.  The number of orders must
 be either one (to be applied to all extensions) or match the number of
 extensions (ie. the number of amps.)
 
@@ -174,7 +174,7 @@ flare ups.
 
 
 The fits for extension 1 and 2 (above left and right) are smooth, no
-extreme values.  The fit for extension 3 however (right) flares up at the
+extreme values.  The fit for extension 3 however (right) flares up and down at the
 edges and corners.  If you hover the cursor on top of the flares you will see
 values very different from the more smooth area.  Clearly the fit has gone
 wrong.  The solution is normally to lower the ``xorder`` for that extension.
@@ -218,7 +218,7 @@ start of this chapter, we look at the inter-bundle gaps for scattered light.
         for i in range(3):
             iraf.imexamine('brg'+flat+'[sci,'+str(i+1)+']', 1)
 
-::
+.. code-block:: text
 
     - Type "c" for a column plot.
     - For a line plot, put the cursor in an inter-bundle area and
@@ -268,7 +268,7 @@ need to bias and overscan correct, that has already been done.
     for flat in iraf.type('flat.lis', Stdout=1):
         iraf.gfdisplay('eqbrg'+flat, 1, version=1)
 
-::
+.. code-block:: text
 
     - Press <spacebar> on a fiber to see the spectrum.
     - Type "q" to quit.
