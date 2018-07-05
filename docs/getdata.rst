@@ -114,9 +114,9 @@ both science and standard.
 Prepared tutorial data
 ======================
 All the data needed for this tutorial is provided in the data package,
-``data_pkg_GMOSIFU_Tutorial.tar.gz`` available for download at:
+``data_pkg_GMOSIFU_Tutorial-v1.0.tar.gz`` available for download at:
 
-   `<http://www.gemini.edu/sciops/data/software/datapkgs/datapkg_GMOSIFU_Tutorial.tar.gz>`_
+   `<http://www.gemini.edu/sciops/data/software/datapkgs/datapkg_GMOSIFU_Tutorial-v1.0.tar.gz>`_
 
 See the last section of the Installation chapter, :ref:`install-data-label`,
 for details.

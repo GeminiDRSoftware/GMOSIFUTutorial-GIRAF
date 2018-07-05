@@ -138,7 +138,7 @@ Data package
 The data needed for this tutorial is packaged in this downloadable
 compressed archive file:
 
-    `<http://www.gemini.edu/sciops/data/software/datapkgs/datapkg_GMOSIFU_Tutorial.tar.gz>`_
+    `<http://www.gemini.edu/sciops/data/software/datapkgs/datapkg_GMOSIFU_Tutorial-v1.0.tar.gz>`_
 
 The document you are reading now is also contained in PDF and HTML in that
 download.
@@ -147,7 +147,7 @@ To set up, simply go to a directory on a disk with plenty of space ??? how much?
 and unpack the archive::
 
     cd /somewhere/
-    tar xvzf datapkg_GMOSIFU_Tutorial.tar.gz
+    tar xvzf datapkg_GMOSIFU_Tutorial-v1.0.tar.gz
 
 This will unpack in a directory called ``GMOSIFU_Tutorial`` and set up the
 directory we will be using throughout the tutorial.  All input data are
