@@ -40,6 +40,6 @@ image shows up, adjust the zoom level on ``ds9`` to let you see the whole image.
         iraf.gdisplay(rawdir+image, 1, fl_paste='no', fl_bias='yes')
         iraf.sleep(3)
 
-.. image:: _graphics/inspect.png
+.. image:: _graphics/Inspect.png
    :scale: 70%
    :align: center
