@@ -92,7 +92,7 @@ Pyfu is software to align and combine GMOS IFU cubes.  It is written and
 maintained by James Turner.  Pyfu is a PyRAF package, ie. Python modules with
 an IRAF interface.  James has shared his software on the Gemini Data Reduction
 Forum.  It can be install with ``conda`` once the Gemini conda channel is
-configured.
+configured.  Version 0.10 is the minimum required version.
 
 ::
 

@@ -55,9 +55,9 @@ step takes a couple minutes to run.
     for arc in iraf.type('arc.lis', Stdout=1):
         iraf.gfreduce(arc, rawpath=rawdir, fl_extract='yes', recenter='no', \
              trace='no', reference='erg'+flatref, fl_bias='no', \
-             fl_over='yes', slits='red', mdffile=mdf, mdfdir='./', \
-             fl_fluxcal='no', fl_gscrrej='no', fl_wavtran='no', \
-             fl_skysub='no', fl_inter='no')
+             fl_over='yes', fl_trim='yes', mdffile=mdf, mdfdir='./', \
+             slits='red', fl_fluxcal='no', fl_gscrrej='no', \
+             fl_wavtran='no', fl_skysub='no', fl_inter='no')
 
 
 Measure the wavelength solution

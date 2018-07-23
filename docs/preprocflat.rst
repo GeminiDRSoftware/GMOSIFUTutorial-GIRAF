@@ -53,9 +53,9 @@ is no need for the interactive mode.  This step takes a few minutes to run.
     imdelete('erg@flat.lis')
 
     gfreduce(flat, rawpath=rawdir, fl_extract='yes', bias=bias, \
-             fl_over='yes', slits='red', mdffile=mdf, mdfdir='./', \
-             fl_fluxcal='no', fl_gscrrej='no', fl_wavtran='no', \
-             fl_skysub='no', fl_inter='no', fl_vardq='yes')
+             fl_over='yes', fl_trim='yes', mdffile=mdf, mdfdir='./', \
+             slits='red', fl_fluxcal='no', fl_gscrrej='no', \
+             fl_wavtran='no', fl_skysub='no', fl_inter='no', fl_vardq='yes')
 
 
 We can check the extracted spectra with ``gfdisplay``.  Once the reconstructed

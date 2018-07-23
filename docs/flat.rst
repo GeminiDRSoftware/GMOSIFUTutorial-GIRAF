@@ -258,8 +258,8 @@ need to bias and overscan correct, that has already been done.
 
     gfreduce('brg@flat.lis', fl_extract=yes, fl_qecorr='yes', \
              qe_refim='erg'+arc, fl_addmdf='no', fl_bias='no', \
-             fl_over='no', fl_trim='no', slits='red', mdffile=mdf, \
-             mdfdir='./', fl_fluxcal='no', fl_gscrrej='no', \
+             fl_over='no', fl_trim='no', mdffile=mdf, mdfdir='./', \
+             slits='red', fl_fluxcal='no', fl_gscrrej='no', \
              fl_wavtran='no', fl_skysub='no', fl_inter='no', \
              fl_vardq='yes')
 

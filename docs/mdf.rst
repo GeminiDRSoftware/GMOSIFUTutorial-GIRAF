@@ -85,9 +85,9 @@ MDF.
     imdelete('rg@flat.lis')
 
     gfreduce(flat, rawpath=rawdir, fl_extract='no', bias=bias, \
-             fl_over='yes', slits='red', mdffile=mdf, mdfdir='./', \
-             fl_fluxcal='no', fl_gscrrej='no', fl_wavtran='no', \
-             fl_skysub='no', fl_inter='no', fl_vardq='no')
+             fl_over='yes', fl_trim='yes', mdffile=mdf, mdfdir='./', \
+             slits='red', fl_fluxcal='no', fl_gscrrej='no', \
+             fl_wavtran='no', fl_skysub='no', fl_inter='no', fl_vardq='no')
 
 Now we extract the flat with the unmodified MDF in interactive mode to
 verify whether or not the fibers are identified correctly.  The key here
@@ -230,9 +230,9 @@ A few extra seconds to wait in favor of simplicity.
     imdelete('rg@flat.lis')
 
     gfreduce(flat, rawpath=rawdir, fl_extract='no', bias=bias, \
-             fl_over='yes', slits='red', mdffile=mdf, mdfdir='./', \
-             fl_fluxcal='no', fl_gscrrej='no', fl_wavtran='no', \
-             fl_skysub='no', fl_inter='no', fl_vardq='no')
+             fl_over='yes', fl_trim='yes', mdffile=mdf, mdfdir='./', \
+             slits='red', fl_fluxcal='no', fl_gscrrej='no', \
+             fl_wavtran='no', fl_skysub='no', fl_inter='no', fl_vardq='no')
 
 
 ::

@@ -42,8 +42,8 @@ feel familiar.
     imdelete('rg@sci.lis')
 
     gfreduce('@sci.lis', rawpath=rawdir, fl_extract='no', \
-             bias=procbias, fl_over='yes', slits='red', mdffile=mdf, \
-             mdfdir='./', fl_fluxcal='no', fl_gscrrej='no', \
+             bias=procbias, fl_over='yes', fl_trim='yes', mdffile=mdf, \
+             mdfdir='./', slits='red', fl_fluxcal='no', fl_gscrrej='no', \
              fl_wavtran='no', fl_skysub='no', fl_vardq='yes', \
              fl_inter='no')
 
